@@ -20,6 +20,7 @@ quizFormNode.addEventListener('submit', function(event) {
 
     window.localStorage.setItem('answers', answersJSON);
 
-    //route to results page
+    window.location = '/pages/results.html';
+
 });
 
