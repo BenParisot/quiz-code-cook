@@ -1,4 +1,5 @@
 const test = QUnit.test;
+import weaponScore from '../src/result/calculate/weaponScore.js';
 
 QUnit.module('weapons score'); //a header that allows you to name tests, useful for when a lot of tests are running at the same time
 
@@ -8,19 +9,6 @@ let scorecard = null;
 QUnit.testStart(function() { 
     scorecard = { dwarf: 0, elf: 0, human: 0 };
 });
-
-function weaponScore(weapon, scorecard) {
-    if(weapon === 'axe') {
-        scorecard.dwarf += 1;
-    }
-    else if(weapon === 'bow') {
-        scorecard.elf += 1;
-    }
-    else {
-        scorecard.human += 1;
-    }
-    return scorecard;
-}
 
 //assert is an object in the QUnit test library that we're accessing by passing it as an argument into the test callback function so we can call methods on it in the function
 test('adds 1 to dwarf in scorecard if axe is chosen', function(assert) {
